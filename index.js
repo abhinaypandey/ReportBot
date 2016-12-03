@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
-var db_uri= "mongodb://abhinay1006:abhi94naya@ds119738.mlab.com:19738/dbcontact";
+var db_uri= "mongodb://abhinay1006:abhinay@ds119738.mlab.com:19738/dbcontact";
 // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(db_uri,{uri_decode_auth: true}, function (err, database) {
   if (err) {
