@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
-var CONTACTS_COLLECTION = "contacts_collection";
+var CONTACTS_COLLECTION = "contacts";
 
 var app = express();
 app.use(express.static(__dirname + "/public"));
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
-var db_uri= "mongodb://abhinay%40mongodb:abhinay@ds119788.mlab.com:19788/abhidb_contacts ";
+var db_uri= "mongodb://abhinay1006:abhi94naya@ds119738.mlab.com:19738/dbcontact";
 // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(db_uri,{uri_decode_auth: true}, function (err, database) {
   if (err) {
