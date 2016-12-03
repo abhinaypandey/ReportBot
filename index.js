@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 var db;
 var db_uri= "mongodb://abhinay@mongodb:abhinay@ds119788.mlab.com:19788/abhidb_contacts ";
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(uri, function (err, database) {
+mongodb.MongoClient.connect(db_uri, function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
