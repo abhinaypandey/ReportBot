@@ -60,12 +60,12 @@ app.post("/contacts", function(req, res) {
   
   var newContact = req.body;
   newContact.createDate = new Date();
-  
+
   db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new contact.");
     } else {
-      res.status(201).json(doc.ops[0]);
+      res.status(201).json(newContact);
     }
   });
 
