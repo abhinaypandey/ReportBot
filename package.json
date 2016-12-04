@@ -10,10 +10,12 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "body-parser": "^1.13.3",
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "mongodb": "^2.1.6",
-    "body-parser": "^1.13.3"
+    "google-auth-library": "^0.9.10",
+    "googleapis": "^14.2.0",
+    "mongodb": "^2.1.6"
   },
   "repository": {
     "type": "git",

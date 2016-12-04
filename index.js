@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -55,13 +57,10 @@ app.get("/contacts", function(req, res) {
 });
 
 app.post("/contacts", function(req, res) { 
+  
   var newContact = req.body;
   newContact.createDate = new Date();
-
-  if (!(req.body.firstName || req.body.lastName)) {
-    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
-  }
-
+  
   db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new contact.");
