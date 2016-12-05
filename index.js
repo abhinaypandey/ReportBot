@@ -58,16 +58,16 @@ app.get("/contacts", function(req, res) {
 
 app.post("/contacts", function(req, res) { 
   
-  var newContact = req.body.user_name;
+  var newContact = req.body;
   newContact.createDate = new Date();
-
-  db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
-    if (err) {
-      handleError(res, err.message, "Failed to create new contact.");
-    } else {
-      res.status(201).json(newContact);
-    }
-  });
+  res.status(201).json(newContact);
+  // db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
+  //   if (err) {
+  //     handleError(res, err.message, "Failed to create new contact.");
+  //   } else {
+  //     res.status(201).json(newContact);
+  //   }
+  // });
 
 
 });
