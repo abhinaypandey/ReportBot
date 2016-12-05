@@ -58,7 +58,7 @@ app.get("/contacts", function(req, res) {
 
 app.post("/contacts", function(req, res) { 
   
-  var newContact = req.body;
+  var newContact = req.body.user_name;
   newContact.createDate = new Date();
 
   db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
